@@ -4,7 +4,7 @@ import os
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        APP_VERSION=os.getenv('APP_VERSION', '0.0.0'),
+        APP_VERSION=os.getenv('APP_VERSION') or '0.0.0',
     )
 
     @app.route('/')
